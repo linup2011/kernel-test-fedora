@@ -4,3 +4,6 @@
 
 - name: filesystem test
   import_playbook: filesystem.yml
+
+- name: networking test
+  import_playbook: networking.yml

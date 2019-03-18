@@ -1,0 +1,8 @@
+  SIOCGSTAMP
+    Return  a  struct  timeval with the receive timestamp of the last packet passed to the user.  This is useful for accurate round trip time measure-
+    ments.  See setitimer(2) for a description of struct timeval.  This ioctl should be used only if the socket option SO_TIMESTAMP is not set on  the
+    socket.   Otherwise,  it  returns the timestamp of the last packet that was received while SO_TIMESTAMP was not set, or it fails if no such packet
+    has been received, (i.e., ioctl(2) returns -1 with errno set to ENOENT).
+  SIOCGSTAMPNS
+    Return timestamp of the last packet passed to the user with ns resolution.
+

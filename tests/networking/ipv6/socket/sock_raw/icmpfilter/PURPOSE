@@ -1,0 +1,10 @@
+In standard sockets, the payload to be transmitted is encapsulated according to the chosen transport layer protocol (e.g. TCP, UDP).
+In contrast, raw sockets usually receive raw packets including the header. When transmitting packets, the automatic addition of a header
+may be a configurable option of the socket.
+
+The system calls sendmsg() that are used to transmit a message to another socket. Next rawv6_sendmgs() and rawv6_send_hdrinc() are called
+to transmit the message from sending raw socket. If IPPROTO_RAW or IP_HDRINCL option is specified in socket() or setsockopt(), user needs 
+to construct his/her own IP and uppder layer header structures.
+
+rawv6_getsockopt should be called if socket is rawv6 prot type. Operation not supported is returned if socket protocl is not equal to
+IPPROTO_ICMPV6, otherwise rawv6_geticmpfilter() should be called.

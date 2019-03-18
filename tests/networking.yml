@@ -1,0 +1,13 @@
+- hosts: localhost
+  tags:
+  - classic
+  roles:
+  - role: standard-test-beakerlib
+    tests:
+    - networking/ipv6/socket
+    - networking/ipv6/socket/sock_raw/icmpfilter
+    - networking/ipv6/socket/ioctl/timestamp
+    - networking/route/route_func
+    required_packages:
+    - beakerlib-libraries
+    - gcc
